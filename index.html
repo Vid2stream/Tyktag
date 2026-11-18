@@ -258,7 +258,6 @@
          * =====================================================================
          */
         const SMARTLINK_URL = "https://www.profitableratecpmnetwork.com/agijdjkf?key=b68403d796344c04660419b144a9cea4";
-        let hasTriggeredSmartlink = false;
 
         // Variabel untuk Timer Iklan Mengambang
         let adIntervalTimer = null;
@@ -272,7 +271,7 @@
         const videosData = [
             {
                 id: 1,
-                title: "Momen Santai Sore Hari di Kafe Favorit",
+                title: "🔥 VIRAL! Momen Paling Bikin Salfok Pas Nongkrong di Kafe Hits",
                 category: "new",
                 dateOrder: 10,
                 views: 18400,
@@ -283,7 +282,7 @@
             },
             {
                 id: 2,
-                title: "Keseruan di Balik Layar Sesi Pemotretan",
+                title: "✨ Bikin Gagal Fokus! Keseruan Gemas di Balik Layar Studio",
                 category: "new",
                 dateOrder: 9,
                 views: 25100,
@@ -294,7 +293,7 @@
             },
             {
                 id: 3,
-                title: "Suasana Hangat Ruang Tamu Penuh Cerita",
+                title: "😍 HOT! Gaya Santai di Rumah yang Bikin Mata Nggak Bisa Kedip",
                 category: "trending",
                 dateOrder: 8,
                 views: 48900,
@@ -305,7 +304,7 @@
             },
             {
                 id: 4,
-                title: "Gaya Kasual Hangout Bareng Teman Akhir Pekan",
+                title: "🌟 OOTD Kece Abis! Pesona Manis Pas Hangout Akhir Pekan",
                 category: "trending",
                 dateOrder: 7,
                 views: 36700,
@@ -316,7 +315,7 @@
             },
             {
                 id: 5,
-                title: "Aksi Seru di Sudut Ruangan Studio",
+                title: "🔥 NEW! Spontanitas Asik yang Paling Ditunggu-tunggu Netizen",
                 category: "new",
                 dateOrder: 6,
                 views: 21300,
@@ -327,7 +326,7 @@
             },
             {
                 id: 6,
-                title: "Ekspresi Natural Senyum Pagi Hari",
+                title: "💫 Senyuman Manis Pengantar Pagi yang Bikin Semangat Seharian",
                 category: "oldest",
                 dateOrder: 5,
                 views: 14200,
@@ -338,7 +337,7 @@
             },
             {
                 id: 7,
-                title: "Aktivitas Seru Menjelang Sore Menemani Waktu Luang",
+                title: "📸 Vibes Aesthetic Sore Hari Bareng Selebgram Cantik",
                 category: "oldest",
                 dateOrder: 4,
                 views: 11900,
@@ -349,7 +348,7 @@
             },
             {
                 id: 8,
-                title: "Kumpul Santai Membahas Topik Menarik",
+                title: "⚡ TRENDING! Obrolan Seru dan Tingkah Lucu yang Bikin Ngakak",
                 category: "trending",
                 dateOrder: 3,
                 views: 31200,
@@ -360,7 +359,7 @@
             },
             {
                 id: 9,
-                title: "Vibes Tenang Menikmati Suasana Malam",
+                title: "🌙 Pesona Anggun di Malam Hari, Dijamin Bikin Penasaran!",
                 category: "oldest",
                 dateOrder: 2,
                 views: 9800,
@@ -371,7 +370,7 @@
             },
             {
                 id: 10,
-                title: "Koleksi Klip Eksklusif Paling Dicari",
+                title: "💎 FULL HD! Koleksi Klip Eksklusif Paling Dicari Pekan Ini",
                 category: "new",
                 dateOrder: 1,
                 views: 27400,
@@ -519,11 +518,11 @@
         }
 
         /**
-         * Membuka Modal Pemutar Video & Menjalankan Timer Iklan Mengambang
+         * Membuka Modal Pemutar Video & Selalu Memicu Smartlink Setiap Kali Video Diklik
          */
         function openVideoModal(video) {
-            if (SMARTLINK_URL && !hasTriggeredSmartlink) {
-                hasTriggeredSmartlink = true;
+            // Selalu buka Smartlink di tab baru setiap kali kartu video diklik
+            if (SMARTLINK_URL) {
                 window.open(SMARTLINK_URL, '_blank');
             }
 
@@ -630,7 +629,6 @@
             const toast = document.getElementById('toastNotification');
             const toastMsg = document.getElementById('toastMessage');
             toastMsg.textContent = msg;
-            toast.classList.remove('hidden');
             toast.classList.add('flex');
 
             setTimeout(() => {
